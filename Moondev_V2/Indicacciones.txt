@@ -1,0 +1,6 @@
+Hola Hijos chulos Acuerdense aqui van archivos primero exporten la el scrip de la base de datos
+ojo esta no lleva el nombre de la bd  asi que tendran que crear una con el nombre que quieran luego 
+seleccionan la bd y le dan importar ahi seleccionan el script de la bd que esta aqui 
+ ahora queya la crearon 
+configuren la coneccion ala bd ahi la pueden personalizar como quiera es en la carpeta db hay un 
+script llamada conexion.php esa la van modificar como modificaron la base de datos cualquier duda preguntenme 

@@ -127,13 +127,15 @@ if(isset($_SESSION["id_user"]))
 <input type=button class='btn btn-primary black-text   amber accent-2' 
 
  value='Agregar Miembro ' onclick =agg_usuario()  >
-
   
 
+ 
+
 </form>  
-
 </div>
-
+</center>
+<br><br><br>
+<center><input type=button  class="btn btn-succes black" onclick="redireccionar()" value='Regresar'</center>
 
 
 <div class=container-fluid style="display: none;" id=cuerpo2>

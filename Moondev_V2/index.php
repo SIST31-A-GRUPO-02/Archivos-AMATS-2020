@@ -89,7 +89,7 @@ if ($_SESSION["cargo"]=="Administrador") {
 
 <a class="nav-link hoverable " href="vistas/ingreso_egresos.php">
 
- <h5 align=center class="nav-link">Egresos e Ingresos</h5>
+ <h5 align=center class="nav-link">Ingresos</h5>
 
 <h5 align=center><img src="vistas/imagenes/iconos/1.png" align=center  class="responsive-img " alt=""></h5>
 
@@ -97,6 +97,17 @@ if ($_SESSION["cargo"]=="Administrador") {
 
 </td>
 
+    <td class="">
+
+<a class="nav-link hoverable " href="vistas/egresos.php">
+
+ <h5 align=center class="nav-link">Egresos</h5>
+
+<h5 align=center><img src="vistas/imagenes/iconos/c.png" align=center  class="responsive-img " alt="" height="130px" width="130px"></h5>
+
+</a>
+
+</td>
 
 
 <td class="">

@@ -1,0 +1,217 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["id_user"]) &&  isset($_SESSION["cargo"])) {
+
+#inicio del inicio de if que verifica la cookie
+
+$cargo=$_SESSION["cargo"];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- estilos propios  -->
+<!--     <link rel="stylesheet" href="estilo.css"> -->
+    <!-- frameworks -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src=js/jquery.js></script>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.js"></script>
+    <link rel="icon" href="imagenes/logos/FAVlogo.png">
+
+   <!-- validaciones de number en decimal -->
+
+
+
+   <title> Resumenes Generales</title>
+
+
+
+</head>
+
+<body class="" oncopy="return false" onpaste="return false">
+<ul id="slide-out" class="sidenav">
+  <li><div class="user-view">
+    <div class="background">
+    </div>
+    <a href=""><img class="figure-img sidenav-close" src="imagenes/logos/logo1.png" ></a>
+    <span class="black-text name"><?php echo $_SESSION["nombre"]; ?>
+    </span>
+    <span class="black-text "><?php echo $_SESSION["cargo"]; ?></span>
+  </div></li>
+  <li><a href="../index.php" class="green-text nav-link" >Inicio</a></li>
+  <li><a href="opc_usuario.php" class="green-text nav-link" >Perfil</a></li>
+  <li><a href="../controladores/cerrar_sesion.php" class="green-text nav-link" >Cerrar Sesion</a></li>
+</ul>
+<a href="" data-target="slide-out" class="sidenav-trigger">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <img src=imagenes/logos/logo1.png alt="Moondev">
+</nav>
+</a>
+    <br>
+    <center>
+    <div class="container-fluid" >
+<center>
+<div class="jumbotron-fluid" style="width: 300px">
+  <?php
+  echo "<input type=hidden id=cargo value='".$_SESSION["cargo"]."' >";
+?>
+
+<div class="container-fluid">
+
+<table class="table table-bordered " >
+<tr>
+  <th colspan="2">Seleccione Un Rango<br> De Fecha Para Mostrar</th>
+</tr>
+<tr>
+  <th>Desde :</th>
+  <th>Hasta</th>
+</tr>
+<tr>
+<td><input type=text class='datepicker' readonly='' id=valor1></td>
+<td><input type=text class='datepicker' readonly='' id=valor2></td>
+</tr>
+<tr>
+<th colspan="2"> <button class="waves-effect  amber accent-2 btn-large col-lg-12 " onclick='mostrar_datos()'>
+Mostrar</button>
+</th>
+</tr>
+</table>
+</div>
+</center>
+
+
+<table class="table table-responsive">
+<tr>
+<td >
+<div class="jumbotron" id=cuerpo4 style="overflow:scroll;width:700px; display:none;height:400px;">
+</div>
+</td>
+<td >
+<div class="jumbotron" id=cuerpo3 style="overflow:scroll;width:500px; display:none;height:400px;">
+</div>
+</td>
+</tr>
+
+<tr>
+  <td>
+        <div class="jumbotron" id=cuerpo style="width:500px; display:none;height:300px;">
+        </div>
+  </td>
+  <td>
+
+      <div  class="jumbotron" id=cuerpo2 style="width:500px;display:none;height:300px;">
+        </div>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+  <div  class="jumbotron" id=cuerpo5 style="width:500px; display:none;height:300px;">
+      </div>
+  </td>
+ <td>
+      <div class="jumbotron" id=cuerpo6 style="width:500px; display:none;height:300px;">
+      </div>
+  </td>
+  </tr>
+
+  </table>
+
+
+
+<!-- script utilizados -->
+</div>
+
+
+<script src="js/ajax.js"></script>
+
+			<center><img src=imagenes/logos/logo1.png alt=Moondev></center>
+      <center><a href=../index.php>
+    <img src='imagenes/iconos/c.ico' class='responsive-img' width=80px height=80px>
+    </a></center>
+
+
+  <!-- esto v
+
+  alida los text box que quiero numeros -->
+
+  <script src=js/validaciones_decimal.js></script>
+
+  <!--  fin script -->
+
+
+
+<!--  es lo que controla el select -->
+
+
+
+<script >
+
+  $(document).ready(function(){
+
+    $('.datepicker').datepicker({
+
+        format: 'yyyy-mm-dd'
+
+    });
+
+  });
+
+</script>
+
+
+
+<!-- fin de los script -->
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+<?php
+
+#fin del inicio del if que verifica la cookie del usuario
+
+}
+
+else{
+
+header("location: login.php");
+
+exit;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
